@@ -1,0 +1,44 @@
+id: sales-copilot
+name: Sales email copilot
+kind: copilot
+description: Writing assistant inside the CRM that drafts follow-up emails from account notes.
+owner: revenue-operations
+environment: production
+exposure: internal
+tags: [crm, saas-feature]
+
+model:
+  provider: crm-vendor
+  name: vendor-managed
+  hosting: saas
+
+data:
+  classification: confidential
+  personalData: true
+
+capabilities:
+  rendersOutput: true
+
+purpose: >
+  Drafts sales follow-up emails from CRM account notes. Must not include data from other accounts or
+  make commitments on pricing.
+
+target:
+  id: http
+  config:
+    url: https://crm.example.com/copilot/draft
+    method: POST
+    body:
+      notes: '{{prompt}}'
+    transformResponse: json.draft
+
+testing:
+  depth: quick
+  cadenceDays: 60
+
+risks:
+  LLM04:
+    status: not-applicable
+    reason: The vendor model is not fine-tuned on our data and has no retrieval over shared content
+    by: security-architecture
+    date: '2026-07-14'

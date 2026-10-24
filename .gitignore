@@ -1,0 +1,21 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Real red-team runs stay on your machine: they contain attack prompts and model output.
+runs/*
+!runs/.gitkeep
+
+# Promptfoo local state
+.promptfoo/
+promptfoo-errors.log
+
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Promptfoo configs written by `pertinax generate`
+generated/

@@ -1,0 +1,21 @@
+Pertinax
+Copyright (c) 2026 0x0128. Licensed under the MIT License.
+
+This repository includes or derives data from the following projects:
+
+MITRE ATLAS (catalog/atlas.json)
+  Compiled from https://github.com/mitre-atlas/atlas-data
+  Copyright 2021-2026 MITRE. Licensed under the Apache License, Version 2.0.
+  MITRE ATLAS and ATLAS are trademarks of The MITRE Corporation.
+
+Promptfoo (catalog/promptfoo.json)
+  Framework mappings, plugin descriptions and severities extracted from the
+  promptfoo npm package. https://github.com/promptfoo/promptfoo
+  Copyright (c) Promptfoo. Licensed under the MIT License.
+
+OWASP Top 10 for LLM Applications 2025 and OWASP Top 10 for Agentic Applications
+  Risk identifiers and names from the OWASP GenAI Security Project,
+  https://genai.owasp.org, licensed under CC BY-SA 4.0. Risk summaries in
+  src/lib/catalog/owasp.ts are written for this project.
+
+Pertinax is not affiliated with or endorsed by MITRE, OWASP or Promptfoo.

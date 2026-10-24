@@ -1,0 +1,61 @@
+# Pertinax technique-level mapping: Promptfoo plugin or strategy -> MITRE ATLAS technique.
+#
+# Promptfoo maps its plugins to ATLAS *tactics* (catalog/promptfoo.json). This file goes one
+# level deeper and names the *techniques* each test exercises, so the ATLAS view can show
+# exactly which techniques your inventory has evidence for.
+#
+# Only list a technique when the test clearly exercises it. Anything not listed here is
+# still covered at tactic level through Promptfoo's own mapping. IDs are checked against
+# catalog/atlas.json by `npm test`.
+
+plugins:
+  prompt-extraction: [AML.T0056, AML.T0069.002]
+  system-prompt-override: [AML.T0051.000]
+  hijacking: [AML.T0051.000]
+  indirect-prompt-injection: [AML.T0051.001]
+  ascii-smuggling: [AML.T0068, AML.T0051]
+  special-token-injection: [AML.T0068, AML.T0069.000]
+  debug-access: [AML.T0069]
+  model-identification: [AML.T0014]
+  tool-discovery: [AML.T0084.001, AML.T0133]
+  excessive-agency: [AML.T0053]
+  mcp: [AML.T0053, AML.T0084.001]
+  shell-injection: [AML.T0053, AML.T0050]
+  sql-injection: [AML.T0053]
+  ssrf: [AML.T0053]
+  bola: [AML.T0053]
+  bfla: [AML.T0053]
+  rbac: [AML.T0053]
+  data-exfil: [AML.T0086, AML.T0077]
+  pii:direct: [AML.T0057]
+  pii:api-db: [AML.T0057, AML.T0085.001]
+  pii:session: [AML.T0057]
+  pii:social: [AML.T0057]
+  harmful:privacy: [AML.T0057]
+  cross-session-leak: [AML.T0057, AML.T0080.001]
+  rag-document-exfiltration: [AML.T0085.000, AML.T0057]
+  rag-poisoning: [AML.T0070, AML.T0071]
+  rag-source-attribution: [AML.T0067.000]
+  agentic:memory-poisoning: [AML.T0080.000]
+  divergent-repetition: [AML.T0057]
+  reasoning-dos: [AML.T0034.001, AML.T0029]
+  imitation: [AML.T0073]
+  competitors: [AML.T0048.001]
+  harmful: [AML.T0048]
+  harmful:cybercrime:malicious-code: [AML.T0048]
+  harmful:misinformation-disinformation: [AML.T0048.002]
+
+strategies:
+  jailbreak: [AML.T0054]
+  jailbreak:composite: [AML.T0054]
+  jailbreak-templates: [AML.T0054]
+  jailbreak:tree: [AML.T0054]
+  jailbreak:meta: [AML.T0054]
+  crescendo: [AML.T0054]
+  goat: [AML.T0054]
+  prompt-injection: [AML.T0051.000]
+  base64: [AML.T0068]
+  hex: [AML.T0068]
+  rot13: [AML.T0068]
+  leetspeak: [AML.T0068]
+  homoglyph: [AML.T0068]

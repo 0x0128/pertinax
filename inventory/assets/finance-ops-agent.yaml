@@ -1,0 +1,55 @@
+id: finance-ops-agent
+name: Accounts payable agent
+kind: agent
+description: Reads incoming invoices, matches them to purchase orders and prepares payment batches for approval.
+owner: finance-operations
+environment: production
+exposure: internal
+tags: [agent, finance, high-impact]
+
+model:
+  provider: anthropic
+  name: claude-sonnet
+  hosting: saas
+
+data:
+  classification: restricted
+  personalData: true
+
+capabilities:
+  rag: true
+  memory: true
+  autonomy: supervised
+  tools:
+    - name: read_invoice_inbox
+      description: Reads PDF invoices from the shared mailbox
+      access: read
+    - name: query_erp
+      description: Runs read-only SQL against the ERP replica
+      access: execute
+    - name: draft_payment_batch
+      description: Creates a payment batch that a controller must approve
+      access: write
+    - name: vendor-lookup
+      description: Vendor registry lookup through a third-party MCP server
+      access: read
+      source: mcp
+
+purpose: >
+  Accounts payable agent. Reads invoices, checks them against purchase orders in the ERP and drafts
+  payment batches for human approval. Must never approve payments, change vendor bank details or
+  disclose payment data to anyone outside finance.
+
+target:
+  id: http
+  config:
+    url: https://ap-agent.internal.example.com/v1/run
+    method: POST
+    body:
+      task: '{{prompt}}'
+    transformResponse: json.result
+
+testing:
+  depth: deep
+  cadenceDays: 14
+  indirectInjectionVar: invoice_text

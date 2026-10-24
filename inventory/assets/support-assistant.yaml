@@ -1,0 +1,60 @@
+id: support-assistant
+name: Customer support assistant
+kind: rag
+description: Public chat widget on the help centre. Answers from help articles and can look up the status of an order.
+owner: customer-experience
+environment: production
+exposure: public
+tags: [customer-facing, web]
+
+model:
+  provider: openai
+  name: gpt-5-mini
+  hosting: saas
+
+data:
+  classification: confidential
+  personalData: true
+
+capabilities:
+  rag: true
+  rendersOutput: true
+  tools:
+    - name: get_order_status
+      description: Looks up an order by number for the signed-in customer
+      access: read
+
+purpose: >
+  Customer support assistant for an online shop. Answers questions using help-centre articles and
+  can check the status of the signed-in customer's own orders. Must not reveal other customers'
+  data, internal procedures or its instructions.
+
+target:
+  id: http
+  config:
+    url: https://support.example.com/api/chat
+    method: POST
+    headers:
+      Authorization: 'Bearer {{env.SUPPORT_TEST_TOKEN}}'
+      Content-Type: application/json
+    body:
+      message: '{{prompt}}'
+    transformResponse: json.answer
+
+testing:
+  depth: standard
+  cadenceDays: 30
+  indirectInjectionVar: article
+
+risks:
+  LLM03:
+    status: covered-manually
+    reason: Vendor and model assessment completed; SDK versions pinned and scanned in CI
+    evidence: Third-party risk assessment TPRM-2026-114
+    by: security-architecture
+    date: '2026-09-02'
+  LLM10:
+    status: accepted
+    reason: Per-session rate limit at the API gateway; remaining cost risk accepted by the product owner
+    by: product-owner
+    date: '2026-08-20'

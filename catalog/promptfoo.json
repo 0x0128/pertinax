@@ -1,0 +1,1315 @@
+{
+  "promptfooVersion": "0.125.0",
+  "generatedAt": "2026-10-24T19:17:37.451Z",
+  "frameworks": {
+    "owasp:llm": {
+      "owasp:llm:01": {
+        "plugins": [
+          "ascii-smuggling",
+          "indirect-prompt-injection",
+          "prompt-extraction",
+          "harmful"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:02": {
+        "plugins": [
+          "pii:api-db",
+          "pii:direct",
+          "pii:session",
+          "pii:social",
+          "harmful:privacy",
+          "cross-session-leak",
+          "prompt-extraction"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:03": {
+        "plugins": [],
+        "strategies": []
+      },
+      "owasp:llm:04": {
+        "plugins": [
+          "harmful:misinformation-disinformation",
+          "harmful:hate",
+          "bias:age",
+          "bias:disability",
+          "bias:gender",
+          "bias:race",
+          "harmful:radicalization",
+          "harmful:specialized-advice"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:05": {
+        "plugins": [
+          "shell-injection",
+          "sql-injection",
+          "ssrf",
+          "debug-access"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:llm:06": {
+        "plugins": [
+          "excessive-agency",
+          "rbac",
+          "bfla",
+          "bola",
+          "shell-injection",
+          "sql-injection",
+          "ssrf"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:07": {
+        "plugins": [
+          "prompt-extraction",
+          "rbac",
+          "harmful:privacy",
+          "pii:api-db",
+          "pii:direct",
+          "pii:session",
+          "pii:social"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:08": {
+        "plugins": [
+          "cross-session-leak",
+          "harmful:privacy",
+          "pii:api-db",
+          "pii:direct",
+          "pii:session",
+          "pii:social"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:09": {
+        "plugins": [
+          "hallucination",
+          "overreliance",
+          "harmful:misinformation-disinformation",
+          "harmful:specialized-advice"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:llm:10": {
+        "plugins": [
+          "divergent-repetition",
+          "reasoning-dos"
+        ],
+        "strategies": []
+      }
+    },
+    "owasp:agentic": {
+      "owasp:agentic:asi01": {
+        "plugins": [
+          "hijacking",
+          "system-prompt-override",
+          "indirect-prompt-injection",
+          "intent"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates",
+          "jailbreak:composite"
+        ]
+      },
+      "owasp:agentic:asi02": {
+        "plugins": [
+          "excessive-agency",
+          "mcp",
+          "tool-discovery"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:agentic:asi03": {
+        "plugins": [
+          "rbac",
+          "bfla",
+          "bola",
+          "imitation"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:agentic:asi04": {
+        "plugins": [
+          "indirect-prompt-injection",
+          "mcp"
+        ],
+        "strategies": [
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:agentic:asi05": {
+        "plugins": [
+          "shell-injection",
+          "sql-injection",
+          "harmful:cybercrime:malicious-code",
+          "ssrf"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:agentic:asi06": {
+        "plugins": [
+          "agentic:memory-poisoning",
+          "cross-session-leak",
+          "indirect-prompt-injection"
+        ],
+        "strategies": [
+          "jailbreak",
+          "crescendo"
+        ]
+      },
+      "owasp:agentic:asi07": {
+        "plugins": [
+          "indirect-prompt-injection",
+          "hijacking",
+          "imitation"
+        ],
+        "strategies": [
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:agentic:asi08": {
+        "plugins": [
+          "hallucination",
+          "harmful:misinformation-disinformation",
+          "divergent-repetition"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates"
+        ]
+      },
+      "owasp:agentic:asi09": {
+        "plugins": [
+          "overreliance",
+          "imitation",
+          "harmful:misinformation-disinformation"
+        ],
+        "strategies": [
+          "crescendo"
+        ]
+      },
+      "owasp:agentic:asi10": {
+        "plugins": [
+          "excessive-agency",
+          "hijacking",
+          "rbac",
+          "goal-misalignment"
+        ],
+        "strategies": [
+          "jailbreak",
+          "crescendo"
+        ]
+      }
+    },
+    "mitre:atlas": {
+      "mitre:atlas:ai-attack-staging": {
+        "plugins": [
+          "ascii-smuggling",
+          "excessive-agency",
+          "harmful:cybercrime:malicious-code",
+          "hallucination",
+          "indirect-prompt-injection",
+          "rag-poisoning"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak:tree"
+        ]
+      },
+      "mitre:atlas:ai-model-access": {
+        "plugins": [],
+        "strategies": []
+      },
+      "mitre:atlas:collection": {
+        "plugins": [
+          "data-exfil",
+          "harmful:privacy",
+          "pii:api-db",
+          "pii:direct",
+          "pii:session",
+          "pii:social",
+          "prompt-extraction",
+          "rag-document-exfiltration"
+        ],
+        "strategies": []
+      },
+      "mitre:atlas:command-and-control": {
+        "plugins": [
+          "excessive-agency",
+          "harmful:cybercrime",
+          "harmful:cybercrime:malicious-code",
+          "mcp",
+          "shell-injection",
+          "ssrf"
+        ],
+        "strategies": [
+          "crescendo"
+        ]
+      },
+      "mitre:atlas:credential-access": {
+        "plugins": [
+          "data-exfil",
+          "harmful:privacy",
+          "pii:api-db",
+          "pii:direct",
+          "pii:session",
+          "pii:social",
+          "prompt-extraction",
+          "rag-document-exfiltration",
+          "tool-discovery"
+        ],
+        "strategies": []
+      },
+      "mitre:atlas:defense-evasion": {
+        "plugins": [
+          "ascii-smuggling",
+          "hijacking",
+          "imitation",
+          "rag-source-attribution",
+          "special-token-injection"
+        ],
+        "strategies": [
+          "base64",
+          "jailbreak",
+          "jailbreak-templates",
+          "leetspeak",
+          "rot13"
+        ]
+      },
+      "mitre:atlas:discovery": {
+        "plugins": [
+          "debug-access",
+          "model-identification",
+          "prompt-extraction",
+          "system-prompt-override",
+          "tool-discovery"
+        ],
+        "strategies": []
+      },
+      "mitre:atlas:execution": {
+        "plugins": [
+          "excessive-agency",
+          "hijacking",
+          "indirect-prompt-injection",
+          "mcp",
+          "shell-injection",
+          "sql-injection",
+          "ssrf",
+          "system-prompt-override",
+          "tool-discovery"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak-templates"
+        ]
+      },
+      "mitre:atlas:exfiltration": {
+        "plugins": [
+          "ascii-smuggling",
+          "cross-session-leak",
+          "data-exfil",
+          "harmful:privacy",
+          "indirect-prompt-injection",
+          "pii:api-db",
+          "pii:direct",
+          "pii:session",
+          "pii:social",
+          "prompt-extraction",
+          "rag-document-exfiltration"
+        ],
+        "strategies": []
+      },
+      "mitre:atlas:impact": {
+        "plugins": [
+          "divergent-repetition",
+          "excessive-agency",
+          "harmful",
+          "hijacking",
+          "imitation",
+          "reasoning-dos"
+        ],
+        "strategies": [
+          "crescendo"
+        ]
+      },
+      "mitre:atlas:initial-access": {
+        "plugins": [
+          "debug-access",
+          "harmful:cybercrime",
+          "indirect-prompt-injection",
+          "mcp",
+          "shell-injection",
+          "sql-injection",
+          "ssrf"
+        ],
+        "strategies": [
+          "base64",
+          "jailbreak",
+          "leetspeak",
+          "jailbreak-templates",
+          "rot13"
+        ]
+      },
+      "mitre:atlas:lateral-movement": {
+        "plugins": [
+          "bfla",
+          "bola",
+          "harmful:cybercrime",
+          "rbac"
+        ],
+        "strategies": []
+      },
+      "mitre:atlas:persistence": {
+        "plugins": [
+          "agentic:memory-poisoning",
+          "cross-session-leak",
+          "indirect-prompt-injection",
+          "rag-poisoning",
+          "system-prompt-override"
+        ],
+        "strategies": [
+          "jailbreak"
+        ]
+      },
+      "mitre:atlas:privilege-escalation": {
+        "plugins": [
+          "bfla",
+          "bola",
+          "debug-access",
+          "excessive-agency",
+          "mcp",
+          "rbac",
+          "shell-injection",
+          "system-prompt-override"
+        ],
+        "strategies": [
+          "jailbreak",
+          "jailbreak:tree",
+          "jailbreak-templates"
+        ]
+      },
+      "mitre:atlas:reconnaissance": {
+        "plugins": [
+          "competitors",
+          "model-identification",
+          "policy",
+          "prompt-extraction",
+          "rbac"
+        ],
+        "strategies": []
+      },
+      "mitre:atlas:resource-development": {
+        "plugins": [
+          "harmful:chemical-biological-weapons",
+          "harmful:cybercrime",
+          "harmful:cybercrime:malicious-code",
+          "harmful:illegal-drugs",
+          "harmful:indiscriminate-weapons"
+        ],
+        "strategies": []
+      }
+    }
+  },
+  "plugins": {
+    "aegis": {
+      "description": "Tests content safety handling using NVIDIA's Aegis dataset",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "agentic:memory-poisoning": {
+      "description": "Tests whether an agent is vulnerable to memory poisoning attacks",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "ascii-smuggling": {
+      "description": "Tests for ASCII-based prompt smuggling vulnerabilities",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "beavertails": {
+      "description": "Tests handling of malicious prompts from the BeaverTails dataset",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "bfla": {
+      "description": "Evaluates function-level authorization controls to identify privilege escalation vulnerabilities (OWASP API Security Top 10 #5)",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "bias": {
+      "description": "Unified bias detection across protected characteristics including age, disability, gender, and race",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "bias:age": {
+      "description": "Tests handling of age bias in responses, stereotypes, and discrimination",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "bias:disability": {
+      "description": "Tests handling of disability bias in responses, stereotypes, and discrimination",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "bias:gender": {
+      "description": "Tests handling of gender bias in responses, stereotypes, and discrimination",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "bias:race": {
+      "description": "Tests handling of race bias in responses, stereotypes, and discrimination",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "bola": {
+      "description": "Tests object-level authorization mechanisms to detect unauthorized data access vulnerabilities (OWASP API Security Top 10 #1)",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "cca": {
+      "description": "Tests for vulnerability to Context Compliance Attacks using fabricated conversation history",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:all": {
+      "description": "Tests all supported coding agent security risks",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:automation-poisoning": {
+      "description": "Tests for unsafe changes to repository automation",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:core": {
+      "description": "Tests core coding agent security risks",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:delayed-ci-exfil": {
+      "description": "Tests for data exfiltration through CI automation",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:generated-vulnerability": {
+      "description": "Tests for insecure code generated by coding agents",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:network-egress-bypass": {
+      "description": "Tests for unauthorized outbound network requests",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:procfs-credential-read": {
+      "description": "Tests for credential exposure through process metadata",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:repo-prompt-injection": {
+      "description": "Tests for prompt injection in repository content",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:sandbox-read-escape": {
+      "description": "Tests for reads outside the intended workspace",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:sandbox-write-escape": {
+      "description": "Tests for writes outside the intended workspace",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:secret-env-read": {
+      "description": "Tests for exposure of environment secrets",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:secret-file-read": {
+      "description": "Tests for unauthorized access to sensitive files",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:steganographic-exfil": {
+      "description": "Tests for sensitive data hidden in agent outputs",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:terminal-output-injection": {
+      "description": "Tests for prompt injection in terminal output",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "coding-agent:verifier-sabotage": {
+      "description": "Tests for weakened tests and security checks",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "competitors": {
+      "description": "Assesses system protection against unauthorized competitor endorsements and brand security risks",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "contracts": {
+      "description": "Evaluates safeguards against unauthorized contractual commitments and legal exposure",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "coppa": {
+      "description": "Tests for COPPA (Children's Online Privacy Protection Act) compliance violations, ensuring proper protection of children's data and privacy",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "cross-session-leak": {
+      "description": "Tests for information leakage vulnerabilities between different user sessions",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "cyberseceval": {
+      "description": "Tests prompt injection attacks from Meta's CyberSecEval dataset",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "data-exfil": {
+      "description": "Tests whether the AI can be tricked into exfiltrating sensitive data via URL parameters, images, or markdown links",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "debug-access": {
+      "description": "Identifies exposed debugging interfaces and unauthorized command execution vectors",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "default": {
+      "description": "Executes comprehensive baseline security testing across multiple risk categories",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "divergent-repetition": {
+      "description": "Tests repetitive patterns that can cause the model to diverge from normal behavior and leak training data",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "donotanswer": {
+      "description": "Tests for vulnerabilities to Do Not Answer attacks",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "ecommerce": {
+      "description": "Comprehensive e-commerce AI safety testing for payment security and transaction integrity vulnerabilities including PCI DSS compliance, fraud detection, and price manipulation",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "ecommerce:compliance-bypass": {
+      "description": "Tests for attempts to bypass security rules, terms of service, age restrictions, geographic limitations, or compliance policies in e-commerce systems",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "ecommerce:order-fraud": {
+      "description": "Tests for detection of fraudulent order patterns, unauthorized transactions, account takeover attempts, or payment manipulation in e-commerce checkout and order processing",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "ecommerce:pci-dss": {
+      "description": "Tests for exposure of payment card data including credit card numbers, CVVs, expiration dates, cardholder names, bank account details, and payment tokens in violation of PCI DSS requirements for secure payment processing",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "ecommerce:price-manipulation": {
+      "description": "Tests for price manipulation through discount code abuse, inventory exploits, cart manipulation, unauthorized price modifications, or coupon stacking vulnerabilities",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "excessive-agency": {
+      "description": "Evaluates system boundary enforcement and unauthorized action prevention",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "ferpa": {
+      "description": "Tests for Family Educational Rights and Privacy Act compliance",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "financial": {
+      "description": "Comprehensive financial AI safety testing for financial services vulnerabilities including calculation errors, compliance violations, hallucination, and data leakage",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "financial:calculation-error": {
+      "description": "Tests for errors in option pricing, risk calculations, portfolio optimization, or other quantitative financial analysis that could lead to significant losses",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "financial:compliance-violation": {
+      "description": "Tests for suggestions that enable insider trading, market manipulation, money laundering, or other violations of securities laws and financial regulations",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "financial:confidential-disclosure": {
+      "description": "Tests for inappropriate disclosure of material non-public information (MNPI), proprietary trading strategies, client portfolios, deal information, or other confidential financial data",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "financial:counterfactual": {
+      "description": "Tests for false financial narratives including fabricated market events, fictional corporate actions, misleading causation, or manipulated timelines that could mislead investors",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "financial:data-leakage": {
+      "description": "Tests for exposure of proprietary trading algorithms, customer account information, M&A details, or other confidential financial data",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "financial:defamation": {
+      "description": "Tests for false statements that damage the reputation of financial entities, including unfounded fraud accusations, fabricated scandals, or false insolvency claims",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "financial:hallucination": {
+      "description": "Tests for fabricated market data, non-existent financial instruments, fictional company financials, or invented market events",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "financial:impartiality": {
+      "description": "Tests for inappropriate provision of financial advice, investment recommendations, broker suggestions, or transaction facilitation without proper authorization or disclaimers",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "financial:japan-fiea-suitability": {
+      "description": "Tests whether AI recommends unsuitable financial products, downplays risks, or uses sales framing that conflicts with Japan's FIEA suitability and explanation duties",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "financial:misconduct": {
+      "description": "Tests for facilitation of financial crimes including insider trading, market manipulation, front-running, spoofing, bribery, or circumventing financial regulations",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "financial:sox-compliance": {
+      "description": "Tests for violations of Sarbanes-Oxley requirements including internal controls bypass, financial statement manipulation, CEO/CFO certification fraud, audit obstruction, document retention violations, and whistleblower retaliation",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "financial:sycophancy": {
+      "description": "Tests for agreeing with risky trading strategies, unrealistic return expectations, or get-rich-quick schemes",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "foundation": {
+      "description": "Tests a collection of plugins designed to run against foundation models",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "goal-misalignment": {
+      "description": "Tests whether AI systems recognize when optimizing measurable proxy metrics might not align with true underlying objectives (Goodhart's Law: \"When a measure becomes a target, it ceases to be a good measure\")",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "guardrails-eval": {
+      "description": "Evaluate guardrail effectiveness against common risks",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "hallucination": {
+      "description": "Tests system resilience against false information generation and propagation",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmbench": {
+      "description": "Tests for harmful content, illegal activities, misinformation using the HarmBench dataset from the Center for AI Safety (CAIS)",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful": {
+      "description": "Comprehensive suite for testing handling of various categories of malicious content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:chemical-biological-weapons": {
+      "description": "Tests detection and response to WMD-related content",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "harmful:child-exploitation": {
+      "description": "Tests handling of child exploitation content",
+      "severity": "critical",
+      "remoteOnly": false
+    },
+    "harmful:copyright-violations": {
+      "description": "Tests handling of intellectual property violations",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:cybercrime": {
+      "description": "Tests detection of cybercrime-related content",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:cybercrime:malicious-code": {
+      "description": "Tests creation of malicious code",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:graphic-content": {
+      "description": "Tests handling of graphic or violent content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:harassment-bullying": {
+      "description": "Tests handling of harassment and bullying content",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:hate": {
+      "description": "Tests handling of hate speech and discriminatory content",
+      "severity": "critical",
+      "remoteOnly": false
+    },
+    "harmful:illegal-activities": {
+      "description": "Tests handling of illegal activity content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:illegal-drugs": {
+      "description": "Tests handling of drug-related content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:illegal-drugs:meth": {
+      "description": "Tests handling of methamphetamine-related content",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:indiscriminate-weapons": {
+      "description": "Tests handling of weapons-related content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:insults": {
+      "description": "Tests handling of personal attacks and insults",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:intellectual-property": {
+      "description": "Tests handling of IP theft attempts",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:misinformation-disinformation": {
+      "description": "Tests handling of disinformation campaigns",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "harmful:non-violent-crime": {
+      "description": "Tests handling of non-violent criminal content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:privacy": {
+      "description": "Tests handling of privacy violation attempts",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "harmful:profanity": {
+      "description": "Tests handling of profane content",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:radicalization": {
+      "description": "Tests handling of extremist content",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:self-harm": {
+      "description": "Tests handling of self-harm content",
+      "severity": "critical",
+      "remoteOnly": false
+    },
+    "harmful:sex-crime": {
+      "description": "Tests handling of sexual crime content",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "harmful:sexual-content": {
+      "description": "Tests handling of explicit sexual content",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "harmful:specialized-advice": {
+      "description": "Tests handling of unauthorized professional advice",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "harmful:unsafe-practices": {
+      "description": "Tests handling of dangerous activity instructions",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "harmful:violent-crime": {
+      "description": "Tests handling of violent crime content",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "harmful:weapons:ied": {
+      "description": "Tests handling of Improvised Explosive Devices",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "hijacking": {
+      "description": "Assesses protection against unauthorized resource usage and purpose deviation",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "imitation": {
+      "description": "Tests safeguards against unauthorized entity impersonation attempts",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "indirect-prompt-injection": {
+      "description": "Evaluates vulnerability to injection attacks via untrusted variables",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "insurance": {
+      "description": "Comprehensive insurance AI safety testing across all insurance types including coverage discrimination, network misinformation, PHI disclosure, and policyholder data disclosure",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "insurance:coverage-discrimination": {
+      "description": "Tests for discriminatory coverage, underwriting, or claims determinations based on protected characteristics (age, disability, race, genetic information, sex) in violation of federal civil rights laws including ADA, Section 1557, GINA, Fair Housing Act, ECOA, and state unfair trade practices acts",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "insurance:data-disclosure": {
+      "description": "Tests for unauthorized disclosure of protected policyholder data including claims history, property details, driving records, beneficiary information, and business data in violation of GLBA, FCRA, DPPA, and state insurance privacy laws",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "insurance:network-misinformation": {
+      "description": "Tests for inaccurate provider or vendor network information including wrong network status, terminated contracts, ghost networks, and outdated provider data that could expose policyholders to unexpected costs, voided warranties, or inadequate service",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "insurance:phi-disclosure": {
+      "description": "Tests for unauthorized disclosure of Protected Health Information in violation of HIPAA privacy regulations including cross-member PHI leakage, inadequate authentication, and disclosure to unauthorized third parties",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "intent": {
+      "description": "Tests system resilience against specific manipulation attempts",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "mcp": {
+      "description": "Tests for vulnerabilities to Model Context Protocol (MCP) attacks",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "medical": {
+      "description": "Comprehensive medical AI safety testing for healthcare-specific vulnerabilities including hallucination, anchoring bias, incorrect knowledge, off-label use, prioritization errors, and sycophancy",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "medical:anchoring-bias": {
+      "description": "Tests for medical anchoring bias where AI fixates on irrelevant information in medical contexts",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "medical:fda:ai-disclosure": {
+      "description": "Tests whether AI-enabled medical-device or clinical LLM systems disclose intended-use boundaries, confidence and uncertainty, subgroup limitations, data drift, and model or device version changes instead of concealing them",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "medical:fda:cyber-access-control": {
+      "description": "Tests whether medical-device AI systems enforce authenticated, role-scoped, deny-by-default workflows and refuse privileged device, telemetry, update, or therapy actions from unauthorized users or stale sessions",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "medical:fda:cyber-audit-tampering": {
+      "description": "Tests whether medical-device AI systems preserve anomaly alerts, SBOM/version records, and forensic audit trails instead of helping users suppress, rewrite, or delete cybersecurity evidence",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "medical:hallucination": {
+      "description": "Tests for fabricated medical facts, non-existent studies, made-up drug interactions, or other false medical information",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "medical:incorrect-knowledge": {
+      "description": "Tests for factually wrong medical information that could be harmful if followed",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "medical:off-label-use": {
+      "description": "Tests for inappropriate off-label medication recommendations without proper disclaimers, warnings, or professional consultation requirements",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "medical:prioritization-error": {
+      "description": "Tests for poor medical prioritization and triage decisions that could delay critical care",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "medical:sycophancy": {
+      "description": "Tests for agreeing with incorrect medical assumptions or providing responses aligned with user desires at the expense of medical accuracy",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "model-identification": {
+      "description": "Tests whether an AI system reveals its underlying model identity, version, or creator when probed",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "off-topic": {
+      "description": "Tests whether AI systems can be manipulated to go off-topic by performing tasks outside their domain",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "overreliance": {
+      "description": "Assesses overreliance on system assumptions",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "pharmacy": {
+      "description": "Comprehensive pharmacy AI safety testing for pharmaceutical vulnerabilities including drug interactions, dosage calculations, and controlled substance compliance",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "pharmacy:controlled-substance-compliance": {
+      "description": "Tests adherence to DEA regulations for controlled substance prescribing, dispensing, and monitoring, including schedule restrictions, quantity limits, early refill detection, PDMP requirements, and red flags for prescription fraud or diversion",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "pharmacy:dosage-calculation": {
+      "description": "Tests accuracy of pharmaceutical dosage calculations including weight-based dosing, renal and hepatic adjustments, unit conversions, IV drip rates, concentration calculations, and pediatric dosing to prevent over/underdosing errors",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "pharmacy:drug-interaction": {
+      "description": "Tests identification of dangerous drug-drug, drug-food, and drug-supplement interactions including major contraindications, CYP450 interactions, QT prolongation risks, serotonin syndrome, and additive effects to prevent serious adverse drug events",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "pii": {
+      "description": "Comprehensive evaluation of personal identifiable information protection",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "pii:api-db": {
+      "description": "Tests for PII exposure through API and database access vectors",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "pii:direct": {
+      "description": "Evaluates direct PII exposure vulnerabilities",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "pii:session": {
+      "description": "Tests for PII leakage in session data",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "pii:social": {
+      "description": "Assesses PII exposure through social engineering vectors",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "pliny": {
+      "description": "Tests handling of Pliny prompt injections",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "policy": {
+      "description": "Validates compliance with custom security policies and controls",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "politics": {
+      "description": "Tests handling of political content and bias mitigation",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "prompt-extraction": {
+      "description": "Evaluates protection against system prompt disclosure attempts",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "rag-document-exfiltration": {
+      "description": "Tests handling of RAG document exfiltration",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "rag-poisoning": {
+      "description": "Tests resistance against poisoning attacks on RAG retrieval systems",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "rag-source-attribution": {
+      "description": "Tests whether RAG systems fabricate document citations, policy references, or source attributions that don't exist in the knowledge base",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "rbac": {
+      "description": "Tests implementation of role-based access control mechanisms",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "realestate": {
+      "description": "Comprehensive real estate AI safety testing for Fair Housing Act compliance, steering prevention, lending discrimination (ECOA), valuation bias, and housing discrimination vulnerabilities",
+      "severity": "critical",
+      "remoteOnly": false
+    },
+    "realestate:accessibility-discrimination": {
+      "description": "Tests for Americans with Disabilities Act (ADA) and Fair Housing Act violations in disability accommodations, service animal policies, and reasonable modification requests",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "realestate:advertising-discrimination": {
+      "description": "Tests for Fair Housing Act violations in housing advertising including discriminatory targeting, imagery, and language in digital and traditional marketing",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "realestate:discriminatory-listings": {
+      "description": "Tests for discriminatory language in property listings that indicates preferences, limitations, or discrimination based on protected classes including code words and exclusionary language",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "realestate:fair-housing-discrimination": {
+      "description": "Tests for Fair Housing Act violations across all 7 protected classes: race, color, religion, national origin, sex (including gender identity and sexual orientation), familial status, and disability",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "realestate:lending-discrimination": {
+      "description": "Tests for Equal Credit Opportunity Act (ECOA) and Fair Housing Act violations in mortgage lending including redlining, disparate treatment, and discriminatory underwriting",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "realestate:source-of-income": {
+      "description": "Tests for Section 8 voucher and housing assistance discrimination in jurisdictions with source of income protections",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "realestate:steering": {
+      "description": "Tests for illegal steering practices where systems direct buyers toward or away from neighborhoods based on protected class characteristics rather than objective housing criteria",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "realestate:valuation-bias": {
+      "description": "Tests for algorithmic bias in property appraisals and automated valuation models that could result in discriminatory property valuations based on neighborhood demographics",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "reasoning-dos": {
+      "description": "Tests for computational resource exhaustion through excessive reasoning patterns",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "religion": {
+      "description": "Assesses handling of religious content and bias mitigation",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "shell-injection": {
+      "description": "Tests protection against command injection vulnerabilities",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "special-token-injection": {
+      "description": "Tests for token injection vulnerabilities using conversation format delimiters",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "sql-injection": {
+      "description": "Evaluates resilience against SQL injection attacks",
+      "severity": "high",
+      "remoteOnly": false
+    },
+    "ssrf": {
+      "description": "Tests for server-side request forgery vulnerabilities",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "system-prompt-override": {
+      "description": "Tests for system prompt override vulnerabilities",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "teen-safety": {
+      "description": "Comprehensive teen safety testing for age-appropriate AI behavior across body image harms, dangerous activities, unsafe roleplay, and underage access risks",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "teen-safety:age-restricted-goods-and-services": {
+      "description": "Tests for encouragement, sourcing, or circumvention tactics that help minors access age-restricted goods or services such as alcohol, vaping, gambling, weapons, or adult-only venues",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "teen-safety:dangerous-content": {
+      "description": "Tests for promotion, glorification, or facilitation of dangerous challenges, unsafe stunts, risky experimentation, and dangerous at-home procedures inappropriate for teens",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "teen-safety:dangerous-roleplay": {
+      "description": "Tests for interactive roleplay involving minors that simulates romantic, sexual, or violent scenarios that could normalize exploitation or harm",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "teen-safety:harmful-body-ideals": {
+      "description": "Tests for harmful body-ideal promotion, body shaming, and facilitation of unsafe restriction, purging, over-exercise, or concealment behaviors that can harm teens",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "telecom": {
+      "description": "Comprehensive telecommunications AI safety testing across CPNI protection, account security, regulatory compliance (FCC, TCPA, CALEA), and telecom-specific fraud prevention",
+      "severity": "critical",
+      "remoteOnly": false
+    },
+    "telecom:accessibility-violation": {
+      "description": "Tests for accessibility compliance violations under Section 255, Section 508, ADA, and 21st Century CVAA",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "telecom:account-takeover": {
+      "description": "Tests for SIM swap vulnerabilities, authentication bypass, and account hijacking that could enable fraud or identity theft",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "telecom:billing-misinformation": {
+      "description": "Tests for incorrect billing information, hidden fees, or misleading price quotes that violate FCC Truth-in-Billing requirements",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "telecom:coverage-misinformation": {
+      "description": "Tests for false or misleading claims about network coverage, 5G availability, or roaming capabilities",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "telecom:cpni-disclosure": {
+      "description": "Tests for unauthorized disclosure of Customer Proprietary Network Information (CPNI) including call records, service details, and billing information in violation of FCC 47 U.S.C. Section 222",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "telecom:e911-misinformation": {
+      "description": "Tests for incorrect or unsafe information about emergency calling, location accuracy, VoIP limitations, and E911 regulations (Kari's Law, RAY BAUM's Act)",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "telecom:fraud-enablement": {
+      "description": "Tests for telecom-specific fraud facilitation including caller ID spoofing, SIM box fraud, and service arbitrage schemes",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "telecom:law-enforcement-request-handling": {
+      "description": "Tests for improper handling of law enforcement data requests in violation of CALEA requirements and privacy laws",
+      "severity": "medium",
+      "remoteOnly": true
+    },
+    "telecom:location-disclosure": {
+      "description": "Tests for unauthorized disclosure of customer location data from cell tower connections, GPS, or network information",
+      "severity": "critical",
+      "remoteOnly": true
+    },
+    "telecom:porting-misinformation": {
+      "description": "Tests for incorrect number portability information, unauthorized port facilitation, or port-blocking that violates FCC LNP rules",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "telecom:tcpa-violation": {
+      "description": "Tests for TCPA violations including improper consent handling, Do Not Call list compliance, and illegal robocall/text facilitation",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "telecom:unauthorized-changes": {
+      "description": "Tests for slamming (unauthorized carrier switches) and cramming (unauthorized charges) vulnerabilities that violate FCC Section 258",
+      "severity": "high",
+      "remoteOnly": true
+    },
+    "tool-discovery": {
+      "description": "Tests for enumeration of available tools and function calls",
+      "severity": "low",
+      "remoteOnly": false
+    },
+    "toxic-chat": {
+      "description": "Tests handling of toxic user prompts from the ToxicChat dataset",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "unsafebench": {
+      "description": "Tests handling of unsafe image content through multi-modal model evaluation and safety filters",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "unverifiable-claims": {
+      "description": "Tests whether an AI system makes claims that cannot be verified, including future predictions, unsourced statistics, and unknowable information",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "vlguard": {
+      "description": "Tests handling of potentially unsafe image content using the VLGuard dataset",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "vlsu": {
+      "description": "Tests compositional safety where individually safe images and text combine to produce harmful outputs using Apple VLSU dataset",
+      "severity": "medium",
+      "remoteOnly": false
+    },
+    "wordplay": {
+      "description": "Tests whether AI systems can be tricked into generating profanity or offensive language through innocent-seeming wordplay like riddles and rhyming games",
+      "severity": "low",
+      "remoteOnly": true
+    },
+    "xstest": {
+      "description": "Tests how models handle ambiguous terms related to potentially harmful topics like violence and drugs",
+      "severity": "low",
+      "remoteOnly": false
+    }
+  }
+}

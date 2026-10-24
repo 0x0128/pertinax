@@ -1,0 +1,33 @@
+id: repo-mcp-server
+name: Internal repositories MCP server
+kind: mcp-server
+description: MCP server that lets coding agents search internal repositories, read files and open pull requests.
+owner: platform-engineering
+environment: production
+exposure: internal
+tags: [mcp, developer-tools]
+
+data:
+  classification: confidential
+  personalData: false
+
+capabilities:
+  autonomy: supervised
+  tools:
+    - name: search_code
+      access: read
+    - name: read_file
+      access: read
+    - name: open_pull_request
+      access: write
+
+purpose: >
+  MCP server for coding agents. Exposes search and read access to internal repositories and can open
+  pull requests. Must not expose secrets found in code or write outside the requested repository.
+
+# No target yet: the MCP endpoint is being wired into a Promptfoo MCP provider.
+# The asset is still planned and shows up as "not tested yet" in the coverage matrix.
+
+testing:
+  depth: standard
+  cadenceDays: 30

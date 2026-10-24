@@ -1,0 +1,39 @@
+id: hr-policy-assistant
+name: HR policy assistant
+kind: rag
+description: Internal assistant that answers employee questions from HR policies, payroll guides and the collective agreement.
+owner: people-operations
+environment: production
+exposure: internal
+tags: [employees, intranet]
+
+model:
+  provider: azure-openai
+  name: gpt-5
+  hosting: saas
+
+data:
+  classification: restricted
+  personalData: true
+
+capabilities:
+  rag: true
+  memory: true
+
+purpose: >
+  Internal HR assistant for employees. Answers questions about leave, benefits and policies from the
+  HR document library. Must not reveal salaries, disciplinary records or any other employee's data.
+
+target:
+  id: http
+  config:
+    url: https://hr-assistant.intranet.example.com/api/ask
+    method: POST
+    body:
+      question: '{{prompt}}'
+    transformResponse: json.answer
+
+testing:
+  depth: standard
+  cadenceDays: 30
+  indirectInjectionVar: document
